@@ -4,9 +4,6 @@
         <meta charset="UTF-8">
         <Title>Gif-Tastic</Title>
 
-        <!--JQuery link-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
         <!--style CSS link-->
         <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
@@ -14,7 +11,37 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     </head>
     <body>
+        <header>
+            <nav class="navbar navbar-dark bg-dark">
+                <h1 class="navbar-brand">Gif-Tastic</h1>
+        
+            </nav>
+        </header>
+        <section>
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                  <h1 class="display-4 text-center">Welcome!</h1>
+                  <p class="lead mx-auto text-center">The buttons below will bring up 10 random GIFs of that subject. Clicking on one of the GIFs will pause or start it. You can also use the green "Create button" under this to make your own button to search for GIFs with any subject!
+                  </p>
+                  <form class="form-inline d-flex justify-content-center mt-3 mb-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Create button!</button>
+                  </form>
+                </div>
+              </div>
+            <div class="buttonsContainer">
 
+            </div>
+            <div class="gifsContainer form-inline d-flex justify-content-center">
+                <button type="button" class="btn btn-secondary ml-1 mr-1">Hamburgers</button>
+                <button type="button" class="btn btn-secondary ml-1 mr-1">Spaghetti</button>
+                <button type="button" class="btn btn-secondary ml-1 mr-1">Fries</button>
+                <button type="button" class="btn btn-secondary ml-1 mr-1">Corn dogs</button>
+            </div>
+        </section>
+        <footer>
+
+        </footer>
         <!--Jquery link-->
         <script src="https://code.jquery.com/jquery.js"></script>
 
@@ -23,5 +50,6 @@
 
         <!--Javascript link-->
         <script src="assets/javascript/app.js"></script>
+
     </body>
 </html>
