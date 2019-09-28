@@ -51,13 +51,27 @@ function displayGifs(){
           var buttonImage = $("<img>");
           // Setting the src attribute of the image to a property pulled off the result item
           buttonImage.attr("src", results[i].images.fixed_height.url);
-
+          buttonImage.attr("data-still", results[i].images.fixed_height_still.url);
+          buttonImage.attr("data-animate", results[i].images.fixed_height.url);
+          buttonImage.attr("data-state", "animate");
+          buttonImage.addClass("gif");
           // Appending the paragraph and image tag to the buttonDiv
           buttonDiv.append(p);
           buttonDiv.append(buttonImage);
 
           // Prependng the buttonDiv to the HTML page in the "#gifs-appear-here" div
           $("#gifs-appear-here").prepend(buttonDiv);
+
+          $(".gif").on("click", function(){
+            var state = $(this).attr("data-state");
+            if (state === "animate") {
+              $(this).attr("src", $(this).attr("data-still"));
+              $(this).attr("data-state", "still");
+            } else {
+              $(this).attr("src", $(this).attr("data-animate"));
+              $(this).attr("data-state", "animate");
+            }
+          })
         }
       });
 }
