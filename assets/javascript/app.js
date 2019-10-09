@@ -62,20 +62,20 @@ function displayGifs(){
           // Prependng the buttonDiv to the HTML page in the "#gifs-appear-here" div
           $("#gifs-appear-here").prepend(buttonDiv);
 
-          $(".gif").on("click", function(){
-            var state = $(this).attr("data-state");
-            if (state === "animate") {
-              $(this).attr("src", $(this).attr("data-still"));
-              $(this).attr("data-state", "still");
-            } else {
-              $(this).attr("src", $(this).attr("data-animate"));
-              $(this).attr("data-state", "animate");
-            }
-          })
+          
         }
       });
 }
-
+$(document).on("click", ".gif", function(){
+  var state = $(this).attr("data-state");
+  if (state == "animate") {
+    $(this).attr("src", $(this).attr("data-still"));
+    $(this).attr("data-state", "still");
+  } else {
+    $(this).attr("src", $(this).attr("data-animate"));
+    $(this).attr("data-state", "animate");
+  }
+})
 
 $(document).on("click", ".button-btn", displayGifs);
 //prepends gifs to screen
